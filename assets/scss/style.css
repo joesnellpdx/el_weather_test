@@ -518,7 +518,7 @@ html {
   font-size: 62.5%; }
 
 body {
-  font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.5;
@@ -558,7 +558,7 @@ a {
 /*Further Reading: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/ */
 h1,
 .alpha {
-  font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 1.4375em;
   font-weight: normal;
   line-height: 1.2;
@@ -574,33 +574,33 @@ h1,
 
 h2,
 .beta {
-  font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 1.1875em;
   line-height: 1.2;
   margin: 0rem 0rem 1.6rem; }
 
 h3,
 .gamma {
-  font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 1.0625em;
   line-height: 1.2;
   margin: 0rem 0rem 1.6rem; }
 
 h4,
 .delta {
-  font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 1.1875em;
   margin: 0rem 0rem 1.6rem; }
 
 h5,
 .epsilon {
-  font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 1.1875em;
   margin: 0rem 0rem 1.6rem; }
 
 h6,
 .zeta {
-  font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 1.1875em;
   margin: 0rem 0rem 1.6rem; }
 
