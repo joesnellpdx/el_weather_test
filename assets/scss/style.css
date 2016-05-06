@@ -1700,6 +1700,11 @@ input[type="submit"], .btn--primary-white {
 /*------------------------------------*\
     $FORMS OBJECTS
 \*------------------------------------*/
+.site-title {
+  text-align: center;
+  font-size: 0.875em;
+  margin: 1.6rem auto; }
+
 .current {
   margin-bottom: 1.6rem; }
 

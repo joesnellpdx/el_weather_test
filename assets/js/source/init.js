@@ -227,7 +227,7 @@
                     var cityName = results[0].address_components[1].long_name;
                     var stateName = results[0].address_components[3].short_name;
 
-                    $('body').find('.main').removeClass('weather-active, weather-move');
+                    $('body').removeClass('weather-move').find('.main').removeClass('weather-active');
                     $('body').find('#jspdx-loader').addClass('jspdx-loader--loading');
                     weatherFunction(cityName, stateName);
                 } else {
