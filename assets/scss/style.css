@@ -524,7 +524,7 @@ body {
   line-height: 1.5;
   min-height: 100vh;
   min-height: 100vh;
-  padding-bottom: 5.4rem;
+  padding-bottom: 14.7rem;
   position: relative;
   color: #343434;
   background: #ddd;
@@ -532,6 +532,9 @@ body {
   body.weather-active {
     visibility: visible;
     opacity: 1; }
+  @media all and (min-width: 46.8em) {
+    body {
+      padding-bottom: 8.7rem; } }
 
 /*------------------------------------*\
     $Links
@@ -705,22 +708,6 @@ object,
 .wp-caption {
   max-width: 100%;
   height: auto; }
-
-.jspdx-video,
-.flexslider,
-video,
-img,
-.background-image {
-  opacity: 0;
-  filter: saturate(0.02) contrast(0.3);
-  transition: filter 1.5s ease-out,  -webkit-filter 1.5s ease-out, opacity 1s ease-out; }
-  .js-loaded .jspdx-video, .js-loaded
-  .flexslider, .js-loaded
-  video, .js-loaded
-  img, .js-loaded
-  .background-image {
-    opacity: 1;
-    filter: saturate(1) contrast(1); }
 
 embed,
 iframe,
@@ -1439,9 +1426,22 @@ a img.aligncenter {
   bottom: 0;
   left: 0;
   background: #808080;
-  min-height: 5.4rem;
+  min-height: 14.7rem;
   width: 100%;
   padding: 1rem; }
+  .footer img {
+    max-width: 170px; }
+  .footer .gi {
+    text-align: center; }
+    .footer .gi a {
+      display: inline-block; }
+  @media all and (min-width: 46.8em) {
+    .footer {
+      min-height: 8.7rem; }
+      .footer .gi {
+        text-align: left; }
+        .footer .gi:last-child {
+          text-align: right; } }
 
 /*------------------------------------*\
     $TEXT Styles

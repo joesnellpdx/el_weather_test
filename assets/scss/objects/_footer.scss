@@ -7,7 +7,25 @@
 	bottom:0;
 	left: 0;
 	background: $gray;
-	min-height: $footer-height;
+	min-height: $footer-height-sm;
 	width: 100%;
 	padding: $pad;
+	img {
+		max-width: 170px;
+	}
+	.gi {
+		text-align: center;
+		a {
+			display: inline-block;
+		}
+	}
+	@media all and (min-width: $bp-med) {
+		min-height: $footer-height;
+		.gi {
+			text-align: left;
+			&:last-child {
+				text-align: right;
+			}
+		}
+	}
 }
