@@ -1,0 +1,71 @@
+/*------------------------------------*\
+    $MEDIA ELEMENTS
+\*------------------------------------*/
+
+/* Flexible Media */
+img,
+video,
+object,
+.wp-caption {
+	max-width: 100%;
+	height: auto;
+}
+
+.jspdx-video,
+.flexslider,
+video,
+img,
+.background-image {
+	@include fade-in;
+}
+
+embed,
+iframe,
+object {
+	max-width: 100%;
+	margin-bottom: $space;
+}
+
+figure {
+	margin-bottom: $space;
+	img {
+		margin-bottom: $space-half;
+	}
+	&.fixedratio {
+		margin: 0;
+		padding-top: $logo-ratio;
+		background-position: center;
+		background-size: cover;
+		&--two {
+			margin: 0;
+			padding-top: 62.5%;
+			background-position: center;
+			background-size: cover;
+		}
+	}
+}
+//figure {
+//	&.fixed-ratio {
+//
+//	}
+//}
+//figure.fixedratio {
+//	margin: 0;
+//	padding-top: $logo-ratio;
+//	background-position: center;
+//	background-size: cover;
+//}
+figcaption {
+	font-style: italic;
+}
+
+.jspdx-video {
+	@include box-shadow(sm-med);
+
+	margin: $space 0rem;
+	border: $border__med solid $white;
+	border-radius: ($border__med * 0.5);
+	.jspdx-modal & {
+		margin: 0rem;
+	}
+}

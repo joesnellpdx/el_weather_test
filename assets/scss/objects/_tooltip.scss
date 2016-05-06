@@ -1,0 +1,46 @@
+/*------------------------------------*\
+    $Tooltip
+\*------------------------------------*/
+
+.tooltip-container {
+	position: relative;
+	display: inline-block;
+
+	&:hover {
+		.tooltip {
+			display: block;
+		}
+	}
+}
+
+.tooltip-link {
+	background: $gray-light;
+}
+
+.tooltip {
+	position: absolute;
+	top: 1.5em;
+	left: 0;
+	display: none;
+	width: 18em;
+	padding: $pad;
+	border: 1px solid $gray;
+	background: $white;
+	box-shadow: 0.3em 0.3em 1em 0 rgba(0,0,0,0.2);
+
+	h2 {
+		margin-top: 0;
+	}
+
+	@media all and (min-width: $bp-small) {
+		width: 22em;
+	}
+
+	@media all and (min-width: $bp-small-2) {
+		width: 27em;
+	}
+
+	@media all and (min-width: $bp-small-3) {
+		width: 30em;
+	}
+}

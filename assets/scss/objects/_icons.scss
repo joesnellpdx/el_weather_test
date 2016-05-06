@@ -1,0 +1,61 @@
+/*------------------------------------*\
+    $Icons
+\*------------------------------------*/
+
+.jspdx-icon {
+	font-family: "sr-icon";
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	line-height: 1;
+	text-transform: none;
+	/* Better Font Rendering =========== */
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	speak: none;
+}
+
+[class^="jspdx-icon-font"] {
+	display: inline-block;
+	overflow: hidden;
+	width: 1em;
+	height: 1em;
+	> svg,
+	> img {
+		width: 100%;
+		height: 100%;
+	}
+	path.primary {
+		@include all-transition(0.3s);
+
+		fill: $font__color;
+	}
+	a:hover &,
+	a:active &,
+	a:focus & {
+		path.primary {
+			fill: $brand__one;
+		}
+	}
+	.icon-link & {
+		width: 1.5em;
+		height: 1.5em;
+		margin-right: 0.5em;
+		path.primary {
+			fill: $link__color;
+		}
+	}
+	.icon-link:hover &,
+	.icon-link:active &,
+	.icon-link:focus & {
+		path.primary {
+			fill: $link__hover;
+		}
+	}
+	//.icon-link:visited & {
+	//	path.primary {
+	//		fill: $link__visited;
+	//	}
+	//}
+}

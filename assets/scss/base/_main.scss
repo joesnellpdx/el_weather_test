@@ -1,0 +1,36 @@
+/*------------------------------------*\
+    $Main
+\*------------------------------------*/
+html {
+	font-size: 62.5%;
+}
+body {
+	font-family: $font;
+	font-size: 1.6rem;
+	font-weight: 400;
+	line-height: 1.5;
+	//visibility: hidden;
+	min-height: 100vh;
+	padding-bottom: $footer-height;
+	transition: opacity 0.3s ease-out;
+	//opacity: 0;
+	color: $gray-dark;
+	background: $white;
+
+	-webkit-text-size-adjust: 100%;
+
+	.wf-active & {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+html,
+body {
+	@media screen and (max-width: $nav-break) {
+		&.nav-open,
+		&.nav-subnav-open {
+			overflow: hidden;
+			height: 100%;
+		}
+	}
+}

@@ -1,0 +1,99 @@
+/*------------------------------------*\
+    $Article
+\*------------------------------------*/
+
+.article-header {
+	h1 {
+		font-size: 2.5em;
+	}
+}
+
+.entry-header {
+	@extend .background--one;
+
+	padding: $space-double 0rem;
+}
+
+.entry-meta {
+	margin: $space 0rem;
+}
+
+.byline {
+	font-size: $font-size__small-2;
+	font-style: italic;
+	margin-bottom: $space-half;
+}
+// paging
+.paging-navigation,
+.post-navigation {
+	display: block;
+	clear: both;
+	width: 100%;
+	margin: $pad 0 $pad*2;
+	padding: 0rem $pad-double;
+}
+.nav-previous,
+.nav-next {
+	display: inline-block;
+	width: 45%;
+	text-transform: uppercase;
+}
+
+.nav-next {
+	position: relative;
+	float: left;
+	padding-left: 1em;
+
+	i {
+		font-size: $font-size__small-2;
+		position: absolute;
+		top: 0.45em;
+		left: 0;
+	}
+}
+
+
+.nav-previous {
+	position: relative;
+	float: right;
+	padding-right: 1em;
+	text-align: right;
+
+	i {
+		font-size: $font-size__small-2;
+		position: absolute;
+		top: 0.45em;
+		right: 0;
+	}
+}
+
+// for ajax loading
+.blog-contain {
+	> .block {
+		opacity: 0;
+
+		filter: saturate(0.02) contrast(0.3);
+		//transition: filter 1.5s ease-out,  -webkit-filter 1.5s ease-out, opacity 1s ease-out;
+		&.loaded {
+			opacity: 1;
+
+			filter: saturate(1) contrast(1);
+		}
+	}
+	.js & {
+		position: relative;
+		.post-navigation {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			visibility: hidden;
+			overflow: hidden;
+			clip: rect(1px, 1px, 1px, 1px);
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			opacity: 0;
+			border: 0;
+		}
+	}
+}

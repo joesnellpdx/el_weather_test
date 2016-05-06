@@ -1,0 +1,20 @@
+/*------------------------------------*\
+    $Sections
+\*------------------------------------*/
+
+.section {
+	@extend .cf;
+
+	margin: 0px;
+	&__title {
+		position: relative;
+		max-width: 26em;
+	}
+	&__content {
+		//max-width: 35em;
+		//margin: 0px auto;
+		&--wide {
+			max-width: none;
+		}
+	}
+}

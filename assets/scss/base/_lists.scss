@@ -1,0 +1,35 @@
+/*------------------------------------*\
+    $Links
+\*------------------------------------*/
+ol,
+ul {
+	margin: 0rem 0rem $space $pad-triple;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: $space;
+}
+
+/* Definition Lists */
+dl {
+	overflow: hidden;
+	margin: 0 0 $space;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 $space $space;
+}

@@ -1,0 +1,69 @@
+/*------------------------------------*\
+    $Text
+\*------------------------------------*/
+p {
+	margin: 0rem 0rem $space;
+}
+
+/* Blockquote */
+blockquote,
+q {
+	@extend .cf;
+
+	margin: 0rem 0rem $space;
+	padding-left: $pad;
+	> p {
+		font-size: 1.4em;
+		position: relative;
+		&:first-of-type {
+			margin-top: 0px;
+			&:before {
+				font-size: 1.6em;
+				position: absolute;
+				top: -0.15em;
+				left: -0.5em;
+				content: "\201C";
+				color: $gray;
+			}
+		}
+		&:last-of-type {
+			&:after {
+				font-size: 40px;
+				line-height: 0;
+				position: relative;
+				bottom: -0.2em;
+				margin-bottom: -0.5em;
+				margin-left: 0.25em;
+				content: "\201D";
+				color: $gray;
+			}
+		}
+	}
+	cite {
+		font-style: normal;
+		display: block;
+		float: right;
+		clear: both;
+		> span {
+			display: block;
+		}
+	}
+	.cite {
+		&__name {
+			font-weight: bold;
+		}
+	}
+}
+
+/* Horizontal Rule */
+hr {
+	height: 2px;
+	margin: $space-double 0;
+	border: 0;
+	background: $gray-light-2;
+}
+
+abbr {
+	cursor: help;
+	border-bottom: 1px dotted $gray;
+}

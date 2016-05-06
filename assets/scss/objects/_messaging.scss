@@ -1,0 +1,18 @@
+/*------------------------------------*\
+    $MESSAGING
+\*------------------------------------*/
+
+// Alerts
+.alert {
+	margin-bottom: $space-half;
+	padding: $pad;
+	text-align: center;
+	border: 1px solid $gray;
+	background: $gray-light;
+}
+
+.alert-error {
+	color: $error;
+	border-color: $error;
+	background: #FFBEBE;
+}

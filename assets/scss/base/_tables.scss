@@ -1,0 +1,19 @@
+/*------------------------------------*\
+    $Table
+\*------------------------------------*/
+table {
+	width: 100%;
+	margin: 0rem 0rem $space;
+	border-spacing: 0;
+	border-collapse: collapse;
+	border: $border__thin solid $gray;
+}
+th {
+	padding: $pad * 0.2;
+	text-align: left;
+	border: $border__thin solid $gray;
+}
+td {
+	padding: $pad * 0.2;
+	border: $border__thin solid $gray;
+}

@@ -1,0 +1,68 @@
+/*------------------------------------*\
+    $Headings
+\*------------------------------------*/
+/*Further Reading: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/ */
+h1,
+.alpha {
+	font-family: $font__headings;
+	font-size: $font-size__large;
+	font-weight: normal;
+	line-height: $font__line-height-headers;
+	margin: 0rem 0rem $space;
+	> span {
+		display: inline-block;
+	}
+	&.entry-title {
+		font-size: $font-size__display;
+		font-weight: 100;
+		max-width: 13em;
+	}
+}
+
+h2,
+.beta {
+	font-family: $font__headings;
+	font-size: $font-size__med-3;
+	line-height: $font__line-height-headers;
+	margin: 0rem 0rem $space;
+}
+
+h3,
+.gamma {
+	font-family: $font__headings;
+	font-size: $font-size__med-2;
+	line-height: $font__line-height-headers;
+	margin: 0rem 0rem $space;
+}
+
+h4,
+.delta {
+	font-family: $font__headings;
+	font-size: $font-size__med-3;
+	margin: 0rem 0rem $space;
+}
+
+h5,
+.epsilon {
+	font-family: $font__headings;
+	font-size: $font-size__med-3;
+	margin: 0rem 0rem $space;
+}
+
+h6,
+.zeta {
+	font-family: $font__headings;
+	font-size: $font-size__med-3;
+	margin: 0rem 0rem $space;
+}
+
+/* Subheadings */
+.title {
+	&__subheading {
+		font-size: $font-size__small;
+		display: block;
+	}
+	&__gi {
+		//margin-top: 0rem;
+	}
+}

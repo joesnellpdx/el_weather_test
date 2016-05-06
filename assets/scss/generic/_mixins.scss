@@ -1,0 +1,71 @@
+/*------------------------------------*\
+	$MIXINS
+\*------------------------------------*/
+
+/* CSS Transition
+	Usage: @include transition(width,0.3s,ease-out);
+*/
+@mixin transition($transition-property, $transition-time, $method) {
+	transition: $transition-property $transition-time $method;
+}
+
+
+/* Fade In
+	Usage: @include fade-in;
+*/
+@mixin fade-in {
+	opacity: 0;
+	filter: saturate(.02) contrast(.3);
+	transition: filter 1.5s ease-out,  -webkit-filter 1.5s ease-out, opacity 1s ease-out;
+	.js-loaded &  {
+		opacity: 1;
+		filter: saturate(1) contrast(1);
+	}
+}
+
+/* Box shadow
+	Usage: @include fade-in(reg);
+*/
+
+$boxshadow__size : med;
+@mixin box-shadow($boxshadow__size) {
+	@if $boxshadow__size == 'med' {
+		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	} @else if $boxshadow__size == 'none' {
+		box-shadow: none;
+	} @else if $boxshadow__size == 'sm' {
+		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	} @else if $boxshadow__size == 'sm-med' {
+		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+	} @else if $boxshadow__size == 'med-lg' {
+		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	} @else if $boxshadow__size == 'lg' {
+		box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+	}
+}
+
+/* Transition
+	Usage: @include all-transition(.3s);
+*/
+$transition__time : .3s;
+@mixin all-transition($transition__time) {
+	transition: all $transition__time ease-out;
+}
+
+/* Center Block
+	Usage: @include center-block;
+*/
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* PX to REM - based on 16px (100%) at html
+	Usage: @include center-block;
+*/
+@mixin pix-rem($property, $des_px) {
+	$rem : ($des_px / 16) + rem;
+	#{$property}: $rem
+}

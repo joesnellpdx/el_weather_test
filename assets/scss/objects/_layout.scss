@@ -1,0 +1,424 @@
+/*------------------------------------*\
+    $LAYOUT
+\*------------------------------------*/
+
+/* Layout Container */
+.lc {
+	@extend .cf;
+
+	max-width: $max-width;
+	margin: 0 auto;
+	padding: $space $space-double 0rem;
+}
+
+/*------------------------------------*\
+    $TEMPLATES
+\*------------------------------------*/
+
+/* Two Column Layout */
+.l-two-col {
+	@extend .cf;
+
+	&__main {
+		@media all and (min-width: $bp-large) {
+			float: left;
+			width: 70%;
+			padding-right: $pad;
+		}
+	}
+
+	&__sidebar {
+		@media all and (max-width: $bp-large) {
+			clear: both;
+		}
+
+		@media all and (min-width: $bp-large) {
+			float: left;
+			width: 30%;
+			padding: 0 0 0 $pad;
+		}
+	}
+}
+
+
+/*------------------------------------*\
+    $GRIDS
+\*------------------------------------*/
+
+/* Grid Container */
+.g {
+	overflow: hidden;
+	margin: 0 (-$pad);
+}
+
+/* Grid Item */
+.gi {
+	padding: $pad;
+
+	img {
+		display: block;
+	}
+
+	@media all and (min-width: $bp-med) {
+		float: left;
+	}
+}
+
+/* Grid 1up */
+.g-1up {
+	.gi {
+		width: 100%;
+	}
+}
+
+/* Grid 2up */
+.g-2up {
+	@media all and (min-width: $bp-med) {
+		> .gi {
+			float: left;
+			width: 50%;
+
+			&:nth-of-type(odd) {
+				clear: left;
+			}
+		}
+	}
+}
+
+/* Grid Half (Always displayed side by side) */
+.g-half {
+	> .gi {
+		float: left;
+		width: 50%;
+
+		&:nth-of-type(odd) {
+			clear: left;
+		}
+	}
+}
+
+/* Grid 3up */
+.g-3up {
+	@media all and (min-width: $bp-med) {
+		> .gi {
+			float: left;
+			width: 50%;
+
+			&:nth-of-type(2n+1) {
+				clear: left;
+			}
+		}
+	}
+
+	@media all and (min-width: $bp-large) {
+		> .gi {
+			width: 33.3333333%;
+
+			&:nth-of-type(2n+1) {
+				clear: none;
+			}
+
+			&:nth-of-type(3n+1) {
+				clear: left;
+			}
+		}
+		/* Grid 2/3 */
+		> .gi-2-3 {
+			float: left;
+			width: 66.666666%;
+		}
+
+		> .gi-1-3 {
+			float: left;
+			width: 33.333333%;
+		}
+	}
+}
+
+/* Grid 4up */
+.g-4up {
+	@media all and (min-width: $bp-med) {
+		> .gi {
+			float: left;
+			width: 50%;
+
+			&:nth-of-type(2n+1) {
+				clear: both;
+			}
+		}
+	}
+
+	@media all and (min-width: $bp-large) {
+		> .gi {
+			width: 25%;
+
+			&:nth-of-type(2n+1) {
+				clear: none;
+			}
+
+			&:nth-of-type(4n+1) {
+				clear: left;
+			}
+		}
+	}
+}
+
+/* Grid Quarter (Always displayed side by side) */
+.g-quarter {
+	> .gi {
+		float: left;
+		width: 24%;
+
+		&:nth-of-type(4n+1) {
+			clear: left;
+		}
+	}
+}
+
+.g-max4 {
+	@media all and (min-width: $bp-small-2) {
+		> .gi {
+			float: left;
+			width: 50%;
+
+			&:nth-of-type(2n+1) {
+				clear: both;
+			}
+		}
+	}
+
+	@media all and (min-width: $bp-small-3) {
+		> .gi {
+			width: 33.3333333%;
+
+			&:nth-of-type(2n+1) {
+				clear: none;
+			}
+
+			&:nth-of-type(3n+1) {
+				clear: left;
+			}
+		}
+	}
+
+	@media all and (min-width: $bp-large) {
+		> .gi {
+			width: 25%;
+
+			&:nth-of-type(3n+1) {
+				clear: none;
+			}
+
+			&:nth-of-type(4n+1) {
+				clear: left;
+			}
+		}
+	}
+}
+
+/* Grid 5up */
+.g-max5 {
+	> .gi {
+		float: left;
+		width: 50%;
+
+		&:nth-of-type(2n+1) {
+			clear: both;
+		}
+	}
+
+	@media all and (min-width: $bp-small-3) {
+		> .gi {
+			width: 33.3333333%;
+
+			&:nth-of-type(2n+1) {
+				clear: none;
+			}
+
+			&:nth-of-type(3n+1) {
+				clear: left;
+			}
+		}
+	}
+
+	@media all and (min-width: $bp-med) {
+		> .gi {
+			width: 25%;
+
+			&:nth-of-type(3n+1) {
+				clear: none;
+			}
+
+			&:nth-of-type(4n+1) {
+				clear: left;
+			}
+		}
+	}
+
+	@media all and (min-width: $bp-med-2) {
+		> .gi {
+			width: 20%;
+
+			&:nth-of-type(4n+1) {
+				clear: none;
+			}
+
+			&:nth-of-type(5n+1) {
+				clear: left;
+			}
+		}
+	}
+}
+
+/* Grid 4up block */
+.g-opposites {
+	.gi {
+		float: left;
+
+		&:last-child {
+			float: right;
+			text-align: right;
+		}
+	}
+}
+
+/* Flex wrap */
+
+.g-flex {
+	.flexbox & {
+		display: flex;
+		margin: 0px;
+		margin-top: -$pad;
+		margin-bottom: $space;
+		margin-left: -$pad;
+
+		flex-flow: row wrap;
+		> .gi {
+			display: flex;
+			float: none;
+			clear: none;
+			flex-direction: column;
+			width: calc(100% - 1rem);
+			margin-top: $pad;
+			//flex-grow: 1;
+			//flex-shrink: 1;
+			//flex-basis: 0;
+			//flex: 1 0 30rem;
+			margin-left: $pad;
+			padding: 0px;
+
+			flex: 1 1 calc(100% - 1rem);
+			flex-flow: column nowrap;
+		}
+		.block {
+			&__inner {
+				//display: flex;
+				//flex-flow: column;
+				//width: 100%;
+			}
+		}
+		&.g-1up {
+			flex-flow: column wrap;
+			> .gi {
+				flex: initial;
+			}
+		}
+	}
+	@media all and (min-width: $bp-med) {
+		.flexbox & {
+			&.g-2up,
+			&.g-3up,
+			&.g-4up {
+				> .gi {
+					float: none;
+					clear: none;
+					width: auto;
+					max-width: calc(50% - 1rem);
+
+					flex: 1 1 calc(50% - 1rem);
+				}
+			}
+		}
+	}
+	@media all and (min-width: $bp-large) {
+		.flexbox & {
+			&.g-1up {
+				> .gi-2-3 {
+					max-width: calc(66.6666% - 1rem);
+					.block__img-contain {
+						padding-top: 29%;
+					}
+				}
+			}
+			&.g-2up {
+				> .gi {
+					//flex: 1 0 60rem;
+					max-width: calc(50% - 1rem);
+
+					flex: 1 1 calc(50% - 1rem);
+				}
+			}
+			&.g-3up {
+				> .gi,
+				> .gi-1-3 {
+					float: none;
+					clear: none;
+					max-width: calc(33.3333% - 1rem);
+					//flex: 1 0 50rem;
+
+					flex: 1 1 calc(33.3333% - 1rem);
+				}
+				> .gi-2-3 {
+					max-width: calc(66.6666% - 1rem);
+
+					flex: 1 1 calc(66.6666% - 1rem);
+					.block__img-contain {
+						padding-top: 29%;
+					}
+				}
+				//&.blog-contain {
+				//	> .gi {
+				//		width: 50%;
+				//		max-width: calc(50% - 2rem);
+				//	}
+				//}
+			}
+			&.g-4up {
+				> .gi {
+					float: none;
+					clear: none;
+					max-width: calc(25% - 1rem);
+
+					flex: 1 1 calc(25% - 1rem);
+				}
+			}
+		}
+	}
+	@media all and (min-width: $bp-xl) {
+		.flexbox & {
+			&.g-3up {
+				//> .gi {
+				//	max-width: calc(25% - 2rem);
+				//}
+				//&.blog-contain {
+				//	> .gi {
+				//		width: 33.3333%;
+				//		max-width: calc(33% - 2rem);
+				//	}
+				//}
+			}
+		}
+	}
+	@media all and (min-width: $bp-xxxl) {
+		.flexbox & {
+			&.g-3up {
+				//&.blog-contain {
+				//	> .gi {
+				//		width: 25%;
+				//		max-width: calc(25% - 2rem);
+				//	}
+				//}
+			}
+		}
+	}
+}

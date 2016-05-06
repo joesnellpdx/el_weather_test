@@ -1,0 +1,28 @@
+/*------------------------------------*\
+    $MAIN CONTENT AREA
+\*------------------------------------*/
+[role=main] {
+	@extend .cf;
+
+	overflow: hidden;
+}
+.content-wrapper {
+	display: block;
+	overflow: hidden;
+	background: $white;
+
+}
+.site-content {
+	@extend .cf;
+
+	clear: both;
+}
+.page-extras {
+	@extend .cf;
+
+	clear: both;
+	background: $white;
+}
+.posts-navigation {
+	margin-bottom: $space;
+}

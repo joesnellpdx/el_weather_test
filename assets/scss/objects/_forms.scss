@@ -1,0 +1,82 @@
+/*------------------------------------*\
+    $FORMS OBJECTS
+\*------------------------------------*/
+
+//button {
+//	@extend .btn;
+//	background: transparent;
+//	color: $brand__one;
+//	border: $border__reg solid $brand__one;
+//	display: inline-block;
+//	position: relative;
+//	overflow: hidden;
+//	width: auto;
+//	&:before {
+//		content: '';
+//		position: absolute;
+//		width: 100%;
+//		height: 100%;
+//		left: -100%;
+//		top: 0;
+//		background: $brand__one;
+//		transition: left .2s ease-out;
+//		z-index: -100;
+//	}
+//	&:hover, &:focus, &:active {
+//		color: $white;
+//		background: transparent;
+//		&:before {
+//			left: 0%;
+//		}
+//	}
+//	&-white {
+//		@extend .btn--primary;
+//		color: $white;
+//		border-color: $white;
+//		&:before {
+//			background: $black;
+//			background: rgba(0,0,0,0.3);
+//		}
+//		&:hover, &:focus {
+//			color: $white;
+//		}
+//
+//	}
+//
+//}
+//
+//button {
+//	background: red;
+//
+//}
+//input[type="submit"] {
+//	@extend .btn;
+//	background: transparent;
+//	color: $brand__one;
+//	border: $border__reg solid $brand__one;
+//	display: inline-block;
+//	position: relative;
+//	overflow: hidden;
+//	width: auto;
+//	&:hover, &:focus, &:active {
+//		color: $white;
+//		background: $brand__one;
+//	}
+//}
+//
+//
+///*------------------------------------*\
+//    $SPECIFIC FORMS
+//\*------------------------------------*/
+//
+///* Search Form */
+//.search-field {
+//	padding-right: 3em;
+//}
+//.inline-form .search-submit {
+//	background: none;
+//	padding: 0.78em 1em;
+//	border: 0;
+//	border-left: 1px solid $gray;
+//	color: $gray;
+//}

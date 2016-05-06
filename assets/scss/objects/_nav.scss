@@ -1,0 +1,140 @@
+/*------------------------------------*\
+    $NAVIGATION
+\*------------------------------------*/
+
+/* LARGE SCREEN - DEFAULT for lte ie8 */
+
+.site-branding {
+	float: left;
+	width: 30%;
+}
+.main-navigation {
+	float: right;
+	max-width: 70%;
+}
+.main-nav-trigger {
+	display: none;
+}
+.primary-menu {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	.noflexbox & {
+		display: block;
+	}
+}
+.menu-item {
+	flex: 0 1 auto;
+	.noflexbox & {
+		float: left;
+	}
+	a {
+		line-height: 1.2;
+		padding: 0rem $space-half;
+		color: $font--color;
+		&:hover,
+		&:active,
+		&:focus {
+			color: $brand__one;
+		}
+	}
+}
+
+/* SMALL(ER) SCREEN */
+@media screen and (max-width: $nav-break) {
+	.site-branding {
+		float: none;
+		width: 100%;
+	}
+	body:not(:target) {
+		.main-navigation {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 0px;
+			height: 0px;
+			&:target {
+				.menu-primary-navigation-container {
+					left: 0%;
+				}
+			}
+		}
+	}
+	.menu-primary-navigation-container {
+		position: fixed;
+		top: 0;
+		left: -100%;
+		overflow-x: hidden;
+		overflow-y: scroll; /* has to be scroll, not auto */
+		width: 100vw;
+		max-width: none;
+		height: 100vh;
+		transition: left 0.3s ease-out;
+		background: $brand__one;
+
+		-webkit-overflow-scrolling: touch;
+		.nav-open & {
+			left: 0;
+			.csstransforms3d & {
+				transform: translate3d(0%, 0, 0);
+			}
+		}
+		.csstransforms3d & {
+			left: 0;
+			transition: transform 0.3s ease-out;
+			transform: translate3d(-100%, 0, 0);
+
+			backface-visibility: hidden;
+		}
+	}
+	.main-nav-trigger {
+		position: absolute;
+		z-index: 1000;
+		top: $space-double;
+		right: $space-double;
+		display: block;
+		float: none;
+		.tcon {
+			&:hover,
+			&:focus &:active {
+				background: transparent;
+			}
+		}
+	}
+	.primary-menu {
+		flex-direction: column;
+		min-height: 100%;
+		min-height: 100vh;
+		padding: $space-double 0rem;
+
+		align-items: center;
+		justify-content: center;
+		.noflexbox & {
+			display: block;
+			text-align: center;
+		}
+	}
+	.menu-item {
+		display: block;
+		float: none;
+		width: 100%;
+		text-align: center;
+		a {
+			font-size: $font-size__large;
+			display: block;
+			width: 100%;
+			padding: $space $space;
+			color: $white;
+			&:hover,
+			&:active,
+			&:focus {
+				color: $brand__one;
+				background: $white;
+			}
+		}
+	}
+}

@@ -1,0 +1,249 @@
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+
+.btn {
+	@include all-transition(0.3s);
+
+	font-size: $font-size__small-2;
+	font-weight: normal;
+	//background: $gray-dark;
+	//color: $white;
+	line-height: 1;
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	margin: 0px;
+	padding: $pad $pad-double;
+	//border: 0;
+	text-align: center;
+	text-transform: uppercase;
+	&:hover,
+	&:focus {
+		color: $white;
+		background: $gray;
+	}
+
+	&.disabled {
+		color: $gray;
+		background: $gray-light-2;
+	}
+	&--primary {
+		@extend .btn;
+
+		z-index: 10;
+		color: $brand__one;
+		border: $border__reg solid $brand__one;
+		background: transparent;
+		&:visited {
+			color: $brand__one;
+		}
+		&:before {
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 100%;
+			content: "";
+			transition: left 0.2s ease-out;
+			background: $brand__one;
+		}
+		&:after {
+			position: absolute;
+			z-index: 1;
+			top: -150%;
+			left: -150%;
+			width: 100%;
+			height: 400%;
+			content: "";
+			transition: left 0s ease-in-out 0s;
+			transform: rotate3d(0, 0, 1, -65deg);
+			background: $white;
+		}
+		&:hover,
+		&:focus,
+		&:active {
+			color: $white;
+			background: transparent;
+			&:before {
+				left: 0%;
+			}
+		}
+		&-white {
+			@extend .btn--primary;
+
+			color: $white;
+			border-color: $white;
+			&:before {
+				background: $black;
+				background: rgba(0,0,0,0.3);
+			}
+			&:hover,
+			&:focus {
+				color: $white;
+			}
+		}
+	}
+	&--small {
+		font-size: $font-size__small;
+	}
+	&--large {
+		font-size: 1.4rem;
+		font-weight: normal;
+		padding: $pad-half;
+		text-transform: uppercase;
+		background: $gray;
+	}
+}
+
+.text-btn {
+	font-style: italic;
+}
+
+$tcon-size: 25px !default;
+$tcon-transition: 0.3s !default;
+$tcon-jstransform: "tcon-transform" !default;
+$tcon-menu-radius: ($tcon-size / 14) !default;
+$tcon-menu-color: $gray !default;
+$tcon-menu-arrowleft-transformation: (
+		transform: scale3d(0.8, 0.8, 0.8) rotate3d(0, 0, 1, 90deg)
+) !default;
+$tcon-menu-arrow360left-transformation: (
+		transform: scale3d(0.8, 0.8, 0.8) rotate3d(0, 0, 1, 360deg)
+) !default;
+.tcon {
+	display: flex;
+	width: $tcon-size;
+	height: $tcon-size;
+	cursor: pointer;
+	user-select: none;
+	transition: $tcon-transition;
+	border: none;
+	outline: none;
+	background: transparent;
+
+	align-items: center;
+	appearance: none;
+	justify-content: center;
+
+	> * {
+		display: block;
+	}
+
+	&:hover,
+	&:focus {
+		outline: none; // see issue #36 https://github.com/grayghostvisuals/transformicons/issues/36
+		background: transparent;
+	}
+	&::-moz-focus-inner {
+		border: 0;
+	}
+}
+
+@mixin tcon-menu-lines {
+	display: inline-block;
+	width: $tcon-size;
+	height: ($tcon-size / 12.5);
+	transition: $tcon-transition;
+	border-radius: $tcon-menu-radius;
+	background: $tcon-menu-color;
+	.nav-open & {
+		transition: $tcon-transition;
+		background: $white;
+	}
+}
+
+.tcon-menu__lines {
+	@include tcon-menu-lines;
+
+	position: relative;
+
+	&:before,
+	&:after {
+		@include tcon-menu-lines;
+
+		position: absolute;
+		left: 0;
+		width: 100%;
+		content: "";
+		transform-origin: ($tcon-size / 14) center;
+		text-decoration: none;
+	}
+
+	&::before {
+		top: ($tcon-size / 3.125);
+	}
+
+	&::after {
+		top: -($tcon-size / 3.125);
+	}
+
+	.#{$tcon-jstransform} & {
+		transform: scale3d(0.8, 0.8, 0.8);
+	}
+	.main-nav-trigger:hover &,
+	.main-nav-trigger:active &,
+	.main-nav-trigger:focus & {
+		background: darken($tcon-menu-color, 10%);
+		&:before,
+		&:after {
+			background: darken($tcon-menu-color, 10%);
+		}
+	}
+}
+.tcon-menu--xbutterfly {
+	width: auto;
+
+	.tcon-menu__lines {
+		&::before,
+		&::after {
+			transition: top 0.3s 0.6s ease, transform 0.3s ease, background 0.3s ease-out;
+			transform-origin: 50% 50%;
+		}
+	}
+
+	&.#{$tcon-jstransform} {
+		.tcon-menu__lines {
+			background: transparent;
+
+			&::before,
+			&::after {
+				top: 0;
+				width: $tcon-size;
+				transition: top 0.3s ease, transform 0.3s 0.5s ease, background 0.3s ease-out;
+			}
+
+			&::before {
+				transform: rotate3d(0, 0, 1, 45deg);
+			}
+
+			&::after {
+				transform: rotate3d(0, 0, 1, -45deg);
+			}
+		}
+	}
+}
+
+// see issue #7 https://github.com/grayghostvisuals/transformicons/issues/7#issuecomment-59813596
+.tcon-visuallyhidden {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+
+	&:active,
+	&:focus {
+		position: static;
+		overflow: visible;
+		clip: auto;
+		width: auto;
+		height: auto;
+		margin: 0;
+		text-decoration: none;
+	}
+}

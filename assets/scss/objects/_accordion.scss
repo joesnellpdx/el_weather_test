@@ -1,0 +1,35 @@
+/*------------------------------------*\
+    $Accordion
+\*------------------------------------*/
+.accordion {
+	margin-bottom: $space;
+}
+
+.acc-handle {
+	font-family: $font__secondary;
+	font-weight: bold;
+	position: relative;
+	display: block;
+	padding: $pad-half;
+	color: $white;
+	border-bottom: 1px solid $gray-light-3;
+	background: $gray-dark-2;
+
+	&:after {
+		float: right;
+		content: "+";
+	}
+
+	&:hover {
+		color: $white;
+		background: $gray-dark;
+	}
+
+	&.active {
+		background: $gray-dark;
+
+		&:after {
+			content: "-";
+		}
+	}
+}
