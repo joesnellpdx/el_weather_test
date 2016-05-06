@@ -1,4 +1,4 @@
-(function($) {
+
 
     var geoLocate = function(){
         var geocoder = new google.maps.Geocoder(),
@@ -75,7 +75,7 @@
 
             $('body').find('#current').append(currentW);
         } else {
-            var key = '8c1a8ef70cc596b2',
+            var key = weatherKey.siteRoot,
                 Weather = 'http://api.wunderground.com/api/' + key + '/conditions/q/' + state + '/' + city + '.json',
                 Forecast = 'http://api.wunderground.com/api/' + key + '/forecast/q/' + state + '/' + city + '.json',
                 today = new Date(),
@@ -150,8 +150,7 @@
                     if(test == null){
                         // do nothing
                     } else {
-
-console.log(data);
+                        
                         var forecastArray = data.forecast.simpleforecast.forecastday,
                             dayF = '';
                             dayF = '<h2 class="forecast__title">Forecast</h2>';
@@ -277,4 +276,4 @@ console.log(data);
 
     });
 
-})(jQuery);
+

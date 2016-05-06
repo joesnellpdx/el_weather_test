@@ -106,11 +106,13 @@ module.exports = function(grunt) {
             },
             main: {
                 options: {
-                    banner: '/*! <%= pkg.name %> <%= pkg.version %> init.min.js <%= grunt.template.today("yyyy-mm-dd h:MM:ss TT") %> */\n',
+                    banner: '(function($){', //added before everything
+                    footer: '})(jQuery);', //added after everything
                     report: 'gzip'
                 },
                 files: {
                     'assets/js/init.min.js': [
+                        'assets/js/source/weather_config.js',
                         'assets/js/source/init.js'
                     ]
                 }
