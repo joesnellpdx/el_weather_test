@@ -75,7 +75,7 @@
 
             $('body').find('#current').append(currentW);
         } else {
-            var key = weatherKey.siteRoot,
+            var key = weatherKey,
                 Weather = 'http://api.wunderground.com/api/' + key + '/conditions/q/' + state + '/' + city + '.json',
                 Forecast = 'http://api.wunderground.com/api/' + key + '/forecast/q/' + state + '/' + city + '.json',
                 today = new Date(),

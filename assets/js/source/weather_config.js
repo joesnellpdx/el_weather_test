@@ -1,4 +1,3 @@
 
-var weatherKey = {};
-weatherKey.siteRoot = '8c1a8ef70cc596b2';
+var weatherKey = '8c1a8ef70cc596b2';
 
