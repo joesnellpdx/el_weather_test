@@ -16,7 +16,8 @@
         }
 
         function errorFunction(){
-            alert("Geocoder failed");
+            alert('It appears your geolocation services are unavailable at this time. Perhaps your browser does not support this feature or it is disabled.');
+            weatherFunction('null', 'null');
         }
 
         function initialize() {
@@ -73,7 +74,13 @@
             currentW = currentW + '<span class="w-current__wind">' + desc + '</span>';
             currentW = currentW + '</div>'
 
-            $('body').find('#current').append(currentW);
+            $('body').find('.main').addClass('weather-active');
+            $('body').find('#current').append(currentW).queue(function (next) {
+                $('body').addClass('weather-move');
+
+                next();
+            });
+            $('body').find('#jspdx-loader').removeClass('jspdx-loader--loading');
         } else {
             var key = weatherKey,
                 Weather = 'http://api.wunderground.com/api/' + key + '/conditions/q/' + state + '/' + city + '.json',
