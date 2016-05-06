@@ -167,7 +167,7 @@
 
     $(document).ready(function( $ ) {
         geoFindMe();
-        codeLatLng();
+        // codeLatLng();
         alert('test');
     });
 
