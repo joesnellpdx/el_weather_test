@@ -1,0 +1,276 @@
+.current {
+	margin-bottom: $space;
+}
+.current,
+.w-day {
+	text-align: center;
+}
+.current,
+.foreecast {
+	margin: $space 0rem;
+}
+.w-current {
+	span {
+		display: block;
+	}
+	&__location {
+		margin-bottom: 0px;
+	}
+}
+.w-day {
+	&__date {
+		font-weight: bold;
+		font-size: $font-size__med;
+		margin-bottom: 0px;
+	}
+}
+.forecast {
+	&__title {
+		text-align: center;
+		margin-bottom: 0px;
+	}
+}
+
+$w__clear : #304FFE;
+$w__light : $gray-light-3;
+$w__dark : $gray;
+
+@mixin cloud_big {
+	&:before {
+		@extend .wt-icon;
+		content: "\f0c2";
+		color: $gray-light-3;
+		z-index: 10;
+	}
+}
+@mixin cloud_small {
+	&:after {
+		@extend .wt-icon;
+		content: "\f0c2";
+		color: $white;
+		z-index: 20;
+	}
+}
+@mixin sun_big {
+	&:before {
+		@extend .wt-icon;
+		content: "\f185";
+		color: #FFEB3B;
+		z-index: 1;
+	}
+}
+@mixin sun_small {
+	&:after {
+		@extend .wt-icon;
+		content: "\f185";
+		color: #FFEB3B;
+		z-index: 1;
+	}
+}
+@mixin rain_big {
+	&:before {
+		@extend .wt-icon;
+		content: "\f043";
+		color: #5C6BC0;
+		z-index: 50;
+	}
+}
+@mixin rain_small {
+	&:after {
+		@extend .wt-icon;
+		content: "\f043";
+		color: #9FA8DA;
+		z-index: 60;
+	}
+}
+@mixin snow_big {
+	&:before {
+		@extend .wt-icon;
+		content: "\f0a3";
+		color: $white;
+		z-index: 80;
+	}
+}
+@mixin snow_small {
+	&:after {
+		@extend .wt-icon;
+		content: "\f0a3";
+		color: $gray-light-3;
+		z-index: 90;
+	}
+}
+@mixin lightning_big {
+	&:before {
+		@extend .wt-icon;
+		content: "\f0e7";
+		color: #FFC107;
+		z-index: 100;
+	}
+}
+@mixin lightning_small {
+	&:after {
+		@extend .wt-icon;
+		content: "\f0e7";
+		color: #FFC107;
+		z-index: 110;
+	}
+}
+
+.f-display {
+	display: block;
+	overflow: hidden;
+	max-width: 20rem;
+	margin: $space auto;
+	position: relative;
+	&:before {
+		font-size: 10em;
+		position: absolute;
+		top: -100%;
+		right: -100%;
+		transition: all .5s ease-out .3s;
+		.weather-move & {
+			top: -6%;
+			right: -18%;
+		}
+	}
+	&:after {
+		position: absolute;
+		font-size: 10em;
+		transition: all .5s ease-out .3s;
+		top: -100%;
+		left: -100%;
+		.weather-move & {
+
+			top: 20%;
+			left: -5%;
+		}
+	}
+	&__inner {
+		display: block;
+		overflow: hidden;
+		width: 100%;
+		padding-top: 110%;
+		border: $border__reg solid $gray;
+		background: $w__clear;
+		&:before {
+			font-size: 8em;
+			position: absolute;
+			top: -50%;
+			right: -50%;
+			transition: all .5s ease-out .3s;
+			.weather-move & {
+				top: 10%;
+				right: 15%;
+			}
+		}
+		&:after {
+			position: absolute;
+
+			font-size: 10em;
+			top: -50%;
+			left: -50%;
+			transition: all .5s ease-out .3s;
+			.weather-move & {
+				top: 25%;
+				left: 10%;
+			}
+		}
+	}
+	&__flurries,
+	&__sleet,
+	&__snow {
+		.f-display__inner {
+			@include snow_small();
+		}
+		background: $w__dark;
+		@include cloud_big();
+		@include cloud_small();
+
+	}
+	&__cloudy,
+	&__hazy,
+	&__fog {
+		background: $w__dark;
+		@include cloud_big();
+		@include cloud_small();
+	}
+	&__mostlycloudy,
+	&__partlysunny {
+		background: $w__clear;
+		.f-display__inner {
+			@include cloud_big();
+			@include cloud_small();
+		}
+		@include sun_small();
+	}
+	&__mostlysunny,
+	&__partlycloudy {
+		background: $w__clear;
+		@include cloud_small();
+		@include sun_big();
+	}
+	&__rain {
+
+		background: $w__dark;
+
+		@include rain_big();
+		@include rain_small();
+		.f-display__inner {
+			@include cloud_big();
+			@include cloud_small();
+		}
+	}
+	&__chanceflurries,
+	&__chancesleet,
+	&__chancesnow{
+		background: $w__dark;
+
+		@include snow_big();
+		@include snow_small();
+		.f-display__inner {
+			@include cloud_big();
+			@include cloud_small();
+		}
+	}
+	&__clear,
+	&__mostlysunny {
+		background: $w__clear;
+		@include sun_big();
+	}
+	&__cloudy {
+		background: $w__dark;
+		@include cloud_big();
+		@include cloud_small();
+	}
+	&__chancetstorms,
+	&__tstorms {
+		background: $w__dark;
+
+		@include lightning_big();
+		@include lightning_small();
+		.f-display__inner {
+			@include cloud_big();
+			@include cloud_small();
+		}
+	}
+	&__chancerain {
+		.f-display__inner {
+			@include rain_small();
+		}
+		background: $w__dark;
+		@include cloud_big();
+		@include cloud_small();
+	}
+}
+.w-day {
+	display: block;
+	overflow: hidden;
+	text-align: center;
+	&__temp {
+		display: inline-block;
+		margin: 0em .25em;
+	}
+	&__conditions {
+		font-size: $font-size__small-2;
+	}
+}

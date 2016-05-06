@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
@@ -13,19 +13,36 @@
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
+        <header>
 
-        <div id="forecast">
-            <h1>Weather at <span id="location"> </span></h1>
-            <div id="imgdiv">
-                <img id="img" src=""/>
+        </header>
+        <div class="main" role="main">
+            <div class="site-content">
+                <div id="current" class="current">
+
+                </div>
+                <form id="weather-form" class="weather-form">
+                    <div class="form-group">
+                        <label for="wzip">Enter Zip Code</label>
+                        <input type="number" class="form-input" id="wzip" min="00000" max="99999">
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+                <div id="forecast" class="forecast">
+
+                </div>
+
             </div>
-            <p>It is currently <span id="temp"> </span>ªF with <span id="desc"> </span></p>
-            <p>Wind: <span id="wind"></span></p>
         </div>
-        <p><button onclick="geoFindMe()">Show my location</button></p>
-        <div id="out"></div>
+        <div class="footer">
+            footer
+        </div>
 
+        <div id="jspdx-loader" class="jspdx-loader jspdx-loader--loading"><div id="jspdx-loader__inner" class="jspdx-loader__inner">Loading...</div></div>
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBce5D9y4ORQyJC34yFgUbMd2B3GRbeXW0"></script>
+
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
         <script src="assets/js/init.min.js"></script>
 

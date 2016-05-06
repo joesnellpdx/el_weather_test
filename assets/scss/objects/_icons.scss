@@ -2,60 +2,50 @@
     $Icons
 \*------------------------------------*/
 
-.jspdx-icon {
-	font-family: "sr-icon";
+@font-face {
+	font-family: 'weather';
+	src:    url('/el_weather/assets/icons/weather.eot?7dlqz9');
+	src:    url('/el_weather/assets/icons/weather.eot?7dlqz9#iefix') format('embedded-opentype'),
+	url('/el_weather/assets/icons/weather.ttf?7dlqz9') format('truetype'),
+	url('/el_weather/assets/icons/weather.woff?7dlqz9') format('woff'),
+	url('/el_weather/assets/icons/weather.svg?7dlqz9#weather') format('svg');
+
 	font-weight: normal;
 	font-style: normal;
-	font-variant: normal;
-	line-height: 1;
-	text-transform: none;
-	/* Better Font Rendering =========== */
+}
 
+[class^="wt-"], [class*=" wt-"], .wt-icon {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'weather' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	speak: none;
 }
 
-[class^="jspdx-icon-font"] {
-	display: inline-block;
-	overflow: hidden;
-	width: 1em;
-	height: 1em;
-	> svg,
-	> img {
-		width: 100%;
-		height: 100%;
-	}
-	path.primary {
-		@include all-transition(0.3s);
-
-		fill: $font__color;
-	}
-	a:hover &,
-	a:active &,
-	a:focus & {
-		path.primary {
-			fill: $brand__one;
-		}
-	}
-	.icon-link & {
-		width: 1.5em;
-		height: 1.5em;
-		margin-right: 0.5em;
-		path.primary {
-			fill: $link__color;
-		}
-	}
-	.icon-link:hover &,
-	.icon-link:active &,
-	.icon-link:focus & {
-		path.primary {
-			fill: $link__hover;
-		}
-	}
-	//.icon-link:visited & {
-	//	path.primary {
-	//		fill: $link__visited;
-	//	}
-	//}
+.wt-tint:before {
+	content: "\f043";
 }
+.wt-certificate:before {
+	content: "\f0a3";
+}
+.wt-cloud:before {
+	content: "\f0c2";
+}
+.wt-bolt:before {
+	content: "\f0e7";
+}
+.wt-flash:before {
+	content: "\f0e7";
+}
+.wt-sun-o:before {
+	content: "\f185";
+}
+
+

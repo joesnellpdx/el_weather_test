@@ -4,25 +4,21 @@
 [role=main] {
 	@extend .cf;
 
-	overflow: hidden;
-}
-.content-wrapper {
-	display: block;
-	overflow: hidden;
-	background: $white;
-
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease-out;
+	&.weather-active {
+		visibility: visible;
+		opacity: 1;
+	}
 }
 .site-content {
 	@extend .cf;
-
-	clear: both;
-}
-.page-extras {
-	@extend .cf;
-
-	clear: both;
+	display: block;
+	overflow: hidden;
 	background: $white;
+	padding: $pad;
+	max-width: 45em;
+	margin: 0 auto;
 }
-.posts-navigation {
-	margin-bottom: $space;
-}
+
