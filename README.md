@@ -6,4 +6,4 @@ A little weather api test.
 
 task runner: grunt
 
-requires: weatherKey variable.
+requires: weatherKey variable.  
