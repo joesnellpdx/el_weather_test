@@ -7,3 +7,5 @@ A little weather api test.
 task runner: grunt
 
 requires: weatherKey variable.  
+
+<a href="http://joesnellpdx.com/el_weather/" target="_blank">Demo</a>
